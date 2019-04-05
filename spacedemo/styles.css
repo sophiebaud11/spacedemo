@@ -1,0 +1,53 @@
+body{
+margin: 0;
+padding: 0;
+width: 100%;
+}
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+.clear { clear: both; }
+#header {
+width: 100%;
+height: 80px;
+position: fixed;
+margin-top: 30px;
+}
+#nav { width: 410px; float: right; margin-top: 20px; }
+#logo a { color: #fff; text-decoration: none; float: left; font-size: 30px; margin-top: 20px; color: #fff; font-family:"Wellfleet"; font-weight: bold; }
+#nav ul{
+list-style: none;
+display: block;
+margin: 0 auto;
+list-style: none;
+}
+#nav li{
+margin-top: 9px;
+float: left;
+padding-left: 21px;
+}
+#slide1, #slide2, #slide3{ width: 100%; }
+#slide1{
+background:url('img/artboard1.png') 33% 0 no-repeat fixed;
+color: #fff;
+margin: 0;
+background-size: cover;
+top: 12.5%;
+height: 85vh;
+}
+#slide2{
+background:url('img/artboard2.png') 33% 0 no-repeat fixed;
+margin: 0 auto;
+overflow: hidden;
+height: 85vh;
+top: 37.5%;
+}
+#slide3{
+background: url('img/artboard3.png') 33% 0 no-repeat fixed;
+color: #fff;
+height: 85vh;
+background-size: cover;
+top: 62.5%;
+}
+#nav li a { color: #fff; opacity:0.6; font-size: 16px; text-decoration: none; font-family: 'Wellfleet'; }
+#nav li a.active { color: #fff; opacity:1; border-bottom: 2px solid #fff; }
+#nav li a:hover { color: #fff; opacity:1; }

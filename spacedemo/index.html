@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Creating a Simple Parallax Scrolling Website</title>
+ <link rel="stylesheet" href="styles.css"/>
+ <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+ <script>
+ </script>
+<!----- HEADER START--->
+<header id="header">
+<div class="content">
+<div id="logo"><a href=""> PARALLAX </a></div>
+<nav id="nav">
+ <ul>
+ <li><a href="#slide1" class="active" title="Next Section" >Slide 1</a></li>
+ <li><a href="#slide2" title="Next Section">Slide 2</a></li>
+ <li><a href="#slide3" title="Next Section">Slide 3</a></li>
+ </ul>
+</nav>
+</div>
+</header>
+</head>
+<body>
+<!-- --- SLIDES START --->
+ <div id="slide1">
+ <img src="img/artboard1.png" align="left"/>
+ </div>
+ <div id="slide2">
+ <img src="img/artboard2.png" align="left"/>
+ </div>
+ <div id="slide3">
+ <img src="img/artboard3.png" align="left"/>
+ </div>
+ <!----- SLIDES END - -->
+</body>
+<script>
+  $(document).ready(function() {
+   $('a[href*=#]').each(function() {
+   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+   && location.hostname == this.hostname
+   && this.hash.replace(/#/,'') ) {
+     var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+     var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+      if ($target) {
+        var targetOffset = $target.offset().top;
+   $(this).click(function() {
+           $("#nav li a").removeClass("active");
+           $(this).addClass('active');
+          $('html, body').animate({scrollTop: targetOffset}, 1000);
+          return false;
+        });
+     }
+   }
+ });
+
+});
+
+
+</script>
+
+</html>
