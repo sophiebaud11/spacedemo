@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>MusicLab 2019</title>
+ <link rel="stylesheet" href="styles.css"/>
+ <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <header id="header">
+      <div class="content">
+      <div id="logo"><a href="">the story of musicLab 2019</a></div>
+      <nav id="nav">
+       <ul>
+       <li><a href="#slide1" class="active" title="Next Section" >Creation</a></li>
+       <li><a href="#slide2" title="Next Section">Understanding</a></li>
+       <li><a href="#slide3" title="Next Section">Search</a></li>
+       </ul>
+      </nav>
+      </div>
+    </header>
+</head>
+  <body>
+    <div class="slides">
+      <div id="slide3" class="panel">
+      </div>
+      <div id="slide2" class="panel">
+      </div>
+      <div id="slide1" class="panel">
+      </div>
+    </div>
+</body>
+<script>
+    var winHeight = $(window).innerHeight();
+    var winWidth = $(window).innerWidth();
+    $(document).ready(function () {
+        $(".panel").height(winHeight);
+        $("body").height(winHeight*$(".panel").length);
+        $(".panel").width(winWidth);
+        $("body").width(winWidth*$(".panel").length);
+    });
+
+    window.addEventListener('resize', function (event) {
+        $(".panel").height($(window).innerHeight());
+        $(".panel").width($(window).innerWidth());
+
+    });
+    $(window).on('scroll',function(){
+        $(".slides").css('bottom',$(window).scrollTop()*-1);
+    });
+
+</script>
+
+</html>
